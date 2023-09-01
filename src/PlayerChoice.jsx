@@ -44,6 +44,7 @@ const PlayerChoice = () => {
           }}
         />
       </div>
+      <div className="confirmButton">Confirm</div>
     </div>
   );
 };
