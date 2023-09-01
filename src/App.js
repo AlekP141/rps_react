@@ -1,10 +1,10 @@
-import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import PlayerChoice from './PlayerChoice';
+import "./App.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import PlayerChoice from "./PlayerChoice";
 
-library.add(fas)
+library.add(fas);
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <FontAwesomeIcon icon="hand-back-fist" />
           <FontAwesomeIcon icon="hand-scissors" />
       </header> */}
-      <PlayerChoice/>
+      <PlayerChoice />
     </div>
   );
 }
