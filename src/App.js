@@ -16,7 +16,6 @@ function App() {
       <div className="App">
         <PlayerChoice />
       </div>
-     <div>{singlePlayerChoice}</div>
      <ComputerChoice />
     </SinglePlayerChoiceContext.Provider>
   );
