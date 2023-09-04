@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import SinglePlayerChoiceContext from "./SinglePlayerChoiceContext";
 
 const PlayerChoice = () => {
   const [choice, setChoice] = useState("none");
   const [scissorsIsActive, setScissorsIsActive] = useState(false);
   const [paperIsActive, setPaperIsActive] = useState(false);
   const [rockIsActive, setRockIsActive] = useState(false);
+  const [_, setSinglePlayerChoice] = useContext(SinglePlayerChoiceContext)
 
   return (
     <div className="playerChoice">
@@ -44,7 +46,7 @@ const PlayerChoice = () => {
           }}
         />
       </div>
-      <div className="confirmButton">Confirm</div>
+      <div className="confirmButton" onClick={() => {setSinglePlayerChoice(choice)}}>Confirm</div>
     </div>
   );
 };
