@@ -9,7 +9,7 @@ const PlayerChoice = () => {
   const [scissorsIsActive, setScissorsIsActive] = useState(false);
   const [paperIsActive, setPaperIsActive] = useState(false);
   const [rockIsActive, setRockIsActive] = useState(false);
-  const [_, setSinglePlayerChoice] = useContext(SinglePlayerChoiceContext)
+  const [_, setSinglePlayerChoice] = useContext(SinglePlayerChoiceContext);
 
   return (
     <div className="playerChoice">
@@ -46,7 +46,14 @@ const PlayerChoice = () => {
           }}
         />
       </div>
-      <div className="confirmButton" onClick={() => {setSinglePlayerChoice(choice)}}>Confirm</div>
+      <div
+        className="confirmButton"
+        onClick={() => {
+          setSinglePlayerChoice(choice);
+        }}
+      >
+        Confirm
+      </div>
     </div>
   );
 };

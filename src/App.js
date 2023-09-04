@@ -5,6 +5,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import PlayerChoice from "./PlayerChoice";
 import SinglePlayerChoiceContext from "./SinglePlayerChoiceContext";
+import ComputerChoice from "./ComputerChoice";
 
 library.add(fas);
 
@@ -16,6 +17,7 @@ function App() {
         <PlayerChoice />
       </div>
      <div>{singlePlayerChoice}</div>
+     <ComputerChoice />
     </SinglePlayerChoiceContext.Provider>
   );
 }
