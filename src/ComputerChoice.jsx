@@ -9,29 +9,24 @@ const ComputerChoice = () => {
   const [outcome, setOutcome] = useState("hello");
 
   useEffect(() => {
-    setComputerChoice(
-      computerOptions[Math.floor(Math.random() * computerOptions.length)],
-    );
+    // console.log("userChoice:", userChoice[0]); //DEBUG
+    const randomComputerChoice =
+      computerOptions[Math.floor(Math.random() * computerOptions.length)];
+
+    // console.log("randomComputerChoice:", randomComputerChoice); //DEBUG
+    setComputerChoice(randomComputerChoice);
 
     // Determine the outcome based on userChoice and computerChoice
-    switch (userChoice) {
-      case "rock":
-        if (computerChoice === "rock") setOutcome("tie");
-        else if (computerChoice === "paper") setOutcome("lose");
-        else if (computerChoice === "scissors") setOutcome("win");
-        break;
-      case "paper":
-        if (computerChoice === "rock") setOutcome("win");
-        else if (computerChoice === "paper") setOutcome("tie");
-        else if (computerChoice === "scissors") setOutcome("lose");
-        break;
-      case "scissors":
-        if (computerChoice === "rock") setOutcome("lose");
-        else if (computerChoice === "paper") setOutcome("win");
-        else if (computerChoice === "scissors") setOutcome("tie");
-        break;
-      default:
-        break;
+    if (userChoice[0] === randomComputerChoice) {
+      setOutcome("tie");
+    } else if (
+      (userChoice[0] === "rock" && computerChoice === "scissors") ||
+      (userChoice[0] === "paper" && computerChoice === "rock") ||
+      (userChoice[0] === "scissors" && computerChoice === "paper")
+    ) {
+      setOutcome("win");
+    } else {
+      setOutcome("lose");
     }
   }, [userChoice, computerChoice]);
 
