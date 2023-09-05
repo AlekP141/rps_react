@@ -50,6 +50,7 @@ const PlayerChoice = () => {
         className="confirmButton"
         onClick={() => {
           setSinglePlayerChoice(choice);
+          document.querySelector("#modal").classList.add("showModal")
         }}
       >
         Confirm

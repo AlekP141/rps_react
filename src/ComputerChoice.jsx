@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import SinglePlayerChoiceContext from "./SinglePlayerChoiceContext";
 import Modal from "./Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ComputerChoice = () => {
   const userChoice = useContext(SinglePlayerChoiceContext);
@@ -8,6 +9,7 @@ const ComputerChoice = () => {
 
   const [computerChoice, setComputerChoice] = useState("none");
   const [outcome, setOutcome] = useState("hello");
+  const [messageText, setMessageText] = useState("");
 
   useEffect(() => {
     // console.log("userChoice:", userChoice[0]); //DEBUG
@@ -31,9 +33,43 @@ const ComputerChoice = () => {
     }
   }, [userChoice, computerChoice]);
 
+
+  useEffect(() => {
+    if (outcome === "win") {
+      setMessageText("Congratulations, you won!");
+    } else if (outcome === "tie") {
+      setMessageText("It is a tie!");
+    } else if (outcome === "lose") {
+      setMessageText("Unlucky, you lost!");
+    }
+  }, [outcome])
   return (
     <Modal>
-      <div>{outcome}</div>
+      <div class="userChoiceResult">
+      <FontAwesomeIcon
+          icon="user"/>
+        <h4>{userChoice[0]}</h4>
+      </div>
+      <div class="computerChoiceResult">
+      <FontAwesomeIcon
+          icon="computer"/>
+        <h4>{computerChoice}</h4>
+      </div>
+      <h2>{messageText}</h2>
+      <button
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
+        Play Again
+      </button>
+      <button
+        onClick={() => {
+          window.close();
+        }}
+      >
+        Exit
+      </button>
     </Modal>
   );
 };
