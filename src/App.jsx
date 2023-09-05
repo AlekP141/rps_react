@@ -14,9 +14,10 @@ function App() {
   return (
     <SinglePlayerChoiceContext.Provider value={singlePlayerChoice}>
       <div className="App">
+        <div id="modal"></div>
         <PlayerChoice />
+        <ComputerChoice />
       </div>
-     <ComputerChoice />
     </SinglePlayerChoiceContext.Provider>
   );
 }

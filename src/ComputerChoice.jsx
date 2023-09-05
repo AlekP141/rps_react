@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import SinglePlayerChoiceContext from "./SinglePlayerChoiceContext";
+import Modal from "./Modal";
 
 const ComputerChoice = () => {
   const userChoice = useContext(SinglePlayerChoiceContext);
@@ -31,11 +32,9 @@ const ComputerChoice = () => {
   }, [userChoice, computerChoice]);
 
   return (
-    <div>
-      <div>{userChoice}</div>
-      <div>{computerChoice}</div>
+    <Modal>
       <div>{outcome}</div>
-    </div>
+    </Modal>
   );
 };
 
