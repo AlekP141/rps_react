@@ -1,7 +1,7 @@
 {
   "name": "rps_react",
   "version": "0.1.0",
-  "homepage": "https://AlekP141.github.io/rps_react",
+  "homepage": "https://alekp141.github.io/rps_react/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
