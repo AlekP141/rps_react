@@ -11,6 +11,7 @@ library.add(fas);
 
 function App() {
   const singlePlayerChoice = useState(null)
+  document.title = "Rock Paper Scissors";
   return (
     <SinglePlayerChoiceContext.Provider value={singlePlayerChoice}>
       <div className="App">
